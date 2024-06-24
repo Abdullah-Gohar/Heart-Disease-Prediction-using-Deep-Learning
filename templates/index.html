@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Heart Disease Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+    
+        h1 {
+            text-align: center;
+        }
+    
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+    
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+    
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+    
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+    
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Heart Disease Prediction</h1>
+    <form action="/predict" method="POST">
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" min="20" max="100" required><br>
+
+        <label for="sex">Sex:</label>
+        <select id="sex" name="sex">
+            <option value="0">Female</option>
+            <option value="1">Male</option>
+        </select><br>
+
+        <label for="cp">Chest Pain Type:</label>
+        <select id="cp" name="cp">
+            <option value="0">Typical Angina</option>
+            <option value="1">Atypical Angina</option>
+            <option value="2">Non-anginal Pain</option>
+            <option value="3">Asymptomatic</option>
+        </select><br>
+
+        <label for="trestbps">Resting Blood Pressure (mm Hg):</label>
+        <input type="number" id="trestbps" name="trestbps" min="90" max="200" required><br>
+
+        <label for="fbs">Fasting Blood Sugar (mg/dl):</label>
+        <select id="fbs" name="fbs">
+            <option value="0">Less Than 120 mg/dl</option>
+            <option value="1">Greater Than or Equal to 120 mg/dl</option>
+        </select><br>
+
+
+        <label for="thalach">Maximum Heart Rate Achieved (bpm):</label>
+        <input type="number" id="thalach" name="thalach" min="60" max="250" required><br>
+
+
+        <label for="exang">Exercise-Induced Angina:</label>
+        <select id="exang" name="exang">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br>
+
+        <input type="submit" value="Predict">
+    </form>
+</body>
+
+</html>
