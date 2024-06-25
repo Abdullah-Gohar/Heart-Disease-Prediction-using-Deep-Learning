@@ -7,6 +7,11 @@
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
+            background-image: url('/static/bg-img.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            padding:20px;
         }
     
         h1 {
@@ -19,7 +24,8 @@
             padding: 20px;
             border: 1px solid #ccc;
             border-radius: 5px;
-            background-color: #f9f9f9;
+            /* background-color: #f9f9f9; */
+            background-color: rgba(249, 249, 249, 0.8);
         }
     
         label {
@@ -38,7 +44,7 @@
         }
     
         input[type="submit"] {
-            background-color: #4CAF50;
+            background-color: blue;
             color: white;
             padding: 10px 15px;
             border: none;
@@ -47,8 +53,13 @@
         }
     
         input[type="submit"]:hover {
-            background-color: #45a049;
+            background-color: rgb(93, 93, 251);
         }
+        .button-container {
+            display: flex;
+            justify-content: center;
+        }
+
     </style>
 </head>
 
@@ -91,8 +102,10 @@
             <option value="0">No</option>
             <option value="1">Yes</option>
         </select><br>
-
-        <input type="submit" value="Predict">
+        <div class="button-container">
+            <input type="submit" value="Predict">
+        </div>
+        
     </form>
 </body>
 

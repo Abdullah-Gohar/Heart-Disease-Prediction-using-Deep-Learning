@@ -17,7 +17,7 @@ import numpy as np
 
 
 
-hd = pd.read_csv('CEP/processed_cleveland.csv', na_values = '?')
+hd = pd.read_csv('processed_cleveland.csv', na_values = '?')
 
 
 hd['cp'].replace({1:'typical_angina', 2:'atypical_angina', 3: 'non-anginal_pain', 4: 'asymptomatic'}, inplace = True)
@@ -75,7 +75,7 @@ test_data = [63, 1, 145, 0, 150, 0,0,0,0,1]
 scaled = scaler.transform([test_data])
 print("Scaled: ",scaled)
 
-joblib.dump(scaler, 'CEP/scaler.pkl')
+joblib.dump(scaler, 'scaler.pkl')
 
 with open("x_train_scaled.txt", "w") as f:
     f.write(str(X_train))
@@ -121,4 +121,4 @@ print(confusion_matrix(y_test, y_pred))
 print(classification_report(y_test, y_pred))
 
 # Save the trained model
-model.save('CEP/heart_disease_model.keras')
+model.save('heart_disease_model.keras')

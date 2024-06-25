@@ -7,7 +7,7 @@ import joblib
 app = Flask(__name__)
 
 # Load the saved deep learning model
-model = load_model('CEP/heart_disease_model.keras')
+model = load_model('heart_disease_model.keras')
 
 # Define the preprocessing function
 
@@ -19,7 +19,7 @@ def preprocess_input(age, sex, cp, trestbps, fbs, thalach, exang):
     
     input_data = [[age,sex,trestbps,fbs,thalach,exang]+cp_indicators]
     
-    scaler = joblib.load('CEP/scaler.pkl')
+    scaler = joblib.load('scaler.pkl')
     input_data = scaler.transform(input_data)
     print(input_data)
     
